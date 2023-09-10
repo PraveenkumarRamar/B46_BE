@@ -53,7 +53,7 @@ app.delete("/products/:id", async (req, res) => {
     })
 })
 
-app.post("/addprod",async(req,res)=>{
+app.post("/products",async(req,res)=>{
     let newProd = req.body
     let final = await client.db("B46_Products").collection("Product").insertMany(newProd)
     res.send({
@@ -62,7 +62,7 @@ app.post("/addprod",async(req,res)=>{
     })
 }) 
 
-app.put('/editprod/:id',async(req,res)=>{
+app.put('/products/:id',async(req,res)=>{
     let editProd = req.body
     // let id
     let update=await client.db('B46_Products').collection('Product').updateOne({id:req.params.id},{ $set:editProd})
