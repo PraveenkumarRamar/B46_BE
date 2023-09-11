@@ -3,12 +3,12 @@ import { MongoClient } from "mongodb";
 const app = express();
 app.use(express.json())
 import cors from "cors"
-app.use(cors())
+
 const PORT = process.env.PORT || 5000
 console.log(PORT)
 import * as dotenv from "dotenv"
 dotenv.config()
-
+app.use(cors())
 //Mongo connection
 const MONGO_URL = process.env.MONGO_URL
 // console.log(MONGO_URL)
